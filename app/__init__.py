@@ -18,7 +18,6 @@ from app.error_handlers import error_handlers
 from app.logging_config import log_con, LOGGING_CONFIG
 from app.simple_pages import simple_pages
 from app.transactions import transactions
-from app.map import map
 from app.db import database
 from flask_cors import CORS
 login_manager = flask_login.LoginManager()

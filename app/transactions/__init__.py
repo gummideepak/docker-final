@@ -38,9 +38,10 @@ def transactions_upload():
         form.file.data.save(filepath)
         #user = current_user
         list_of_transactions = []
-        with open(filepath) as file:
+        with open(filepath, encoding='utf-8-sig') as file:
             csv_file = csv.DictReader(file)
             for row in csv_file:
+                # print(row)
                 amount = int(row['AMOUNT'])
                 # if (amount < 0):
                 #     amount = amount * -1
