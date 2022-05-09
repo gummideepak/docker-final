@@ -6,6 +6,9 @@ from app.auth.decorators import admin_required
 from app.auth.forms import login_form, register_form, profile_form, security_form, user_edit_form
 from app.db import db
 from app.db.models import User
+from app.db.models import Transactions
+from jinja2 import TemplateNotFound
+from flask import Blueprint, render_template, abort, url_for,current_app
 
 auth = Blueprint('auth', __name__, template_folder='templates')
 
@@ -63,11 +66,22 @@ def logout():
     return redirect(url_for('auth.login'))
 
 
-
-@auth.route('/dashboard')
+@auth.route('/dashboard', methods=['GET'], defaults={"page": 1})
+@auth.route('/dashboard/<int:page>', methods=['GET'])
 @login_required
-def dashboard():
-    return render_template('dashboard.html')
+def dashboard(page):
+    page = page
+    per_page = 1000
+    pagination = Transactions.query.paginate(page, per_page, error_out=False)
+    data = pagination.items
+    balance = 0
+    for transaction in data:
+        print (transaction.amount)
+        balance = balance + transaction.amount
+    try:
+        return render_template('dashboard.html',data=data, balance=balance,pagination=pagination)
+    except TemplateNotFound:
+        abort(404)
 
 
 @auth.route('/profile', methods=['POST', 'GET'])
