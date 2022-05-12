@@ -85,6 +85,7 @@ def dashboard(page):
 
 
 @auth.route('/profile', methods=['POST', 'GET'])
+@login_required
 def edit_profile():
     user = User.query.get(current_user.get_id())
     form = profile_form(obj=user)
