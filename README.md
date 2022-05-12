@@ -1,8 +1,8 @@
 # Project Setup
 
-[![Run Tests, Build Dockerfile, Run on Heroku Prod](https://github.com/gummideepak/docker-flask/actions/workflows/test-build-deploy.yml/badge.svg)](https://github.com/gummideepak/docker-final/actions/workflows/dev.yml) [Transactions - Production](https://docker-final-prod.herokuapp.com/)
+[![Production Pipeline](https://github.com/gummideepak/docker-flask/actions/workflows/test-build-deploy.yml/badge.svg)](https://github.com/gummideepak/docker-final/actions/workflows/dev.yml) [Transactions - Production](https://docker-final-prod.herokuapp.com/)
 
-[![Run Tests, Build Dockerfile, Run on Heroku Dev](https://github.com/gummideepak/docker-flask/actions/workflows/test-build-deploy-dev.yml/badge.svg)](https://github.com/gummideepak/docker-final/actions/workflows/prod.yml) [Transactions - Dev](https://docker-final-dev.herokuapp.com/)
+[![Development Pipeline](https://github.com/gummideepak/docker-flask/actions/workflows/test-build-deploy-dev.yml/badge.svg)](https://github.com/gummideepak/docker-final/actions/workflows/prod.yml) [Transactions - Dev](https://docker-final-dev.herokuapp.com/)
 
 
 
