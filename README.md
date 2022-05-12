@@ -1,13 +1,13 @@
 # Project Setup
 
-[![Run Tests, Build Dockerfile, Run on Heroku Prod](https://github.com/gummideepak/docker-flask/actions/workflows/test-build-deploy.yml/badge.svg)](https://github.com/gummideepak/docker-final/actions/workflows/dev.yml)
+[![Run Tests, Build Dockerfile, Run on Heroku Prod](https://github.com/gummideepak/docker-flask/actions/workflows/test-build-deploy.yml/badge.svg)](https://github.com/gummideepak/docker-final/actions/workflows/dev.yml) [Transactions - Production](https://docker-final-prod.herokuapp.com/)
 
-[![Run Tests, Build Dockerfile, Run on Heroku Dev](https://github.com/gummideepak/docker-flask/actions/workflows/test-build-deploy-dev.yml/badge.svg)](https://github.com/gummideepak/docker-final/actions/workflows/prod.yml)
+[![Run Tests, Build Dockerfile, Run on Heroku Dev](https://github.com/gummideepak/docker-flask/actions/workflows/test-build-deploy-dev.yml/badge.svg)](https://github.com/gummideepak/docker-final/actions/workflows/prod.yml) [Transactions - Dev](https://docker-final-dev.herokuapp.com/)
 
 
-[My App - Dev](https://docker-final-dev.herokuapp.com/)
 
-[My App - Production](https://docker-final-prod.herokuapp.com/)
+
+
 
 ## Setting up CI/CD
 
