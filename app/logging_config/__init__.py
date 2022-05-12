@@ -15,10 +15,6 @@ log_con = flask.Blueprint('log_con', __name__)
 def before_request_logging():
     log = logging.getLogger("myapp")
     log.info('Request - : %s', request.headers)
-    
-
-
-
 
 @log_con.after_app_request
 def after_request_logging(response):

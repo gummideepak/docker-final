@@ -7,24 +7,6 @@ from app.db.models import User, Transactions
 from faker import Faker
 
 
-def test_request_main_menu_links(client):
-    """This makes the index page"""
-    response = client.get("/")
-    assert response.status_code == 200
-    assert b'href="/login"' in response.data
-    assert b'href="/register"' in response.data
-
-def test_auth_pages(client):
-    """This makes the index page"""
-    response = client.get("/dashboard")
-    assert response.status_code == 302
-    response = client.get("/register")
-    assert response.status_code == 200
-    response = client.get("/login")
-    assert response.status_code == 200
-    response = client.get('/users')
-    assert response.status_code == 302
-
 def test_user_regestration(client):
     assert db.session.query(User).count() == 0
     log = logging.getLogger("myApp")
@@ -144,6 +126,14 @@ def test_unauthorized_upload(application, client):
         response = client.post('/logout', follow_redirects=True)
         response = client.get('/transactions/upload', follow_redirects=True)
         assert b'Please log in to access this page.' in response.data
+
+
+def test_page_not_found(application, client):
+    with application.app_context():
+        #logout if alredy logged in
+        response = client.post('/testpage', follow_redirects=True)
+        assert b'Oops! Looks like the page doesn\'t exist anymore' in response.data
+
 
 def extract_csrf_token(page):
     start = page.find('name="csrf_token" type="hidden" value="')+len('name="csrf_token" type="hidden" value="')
